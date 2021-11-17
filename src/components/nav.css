@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    color: white;
+    display: flex;
+    border: white solid;
+    margin-right: 86vw;
+    border-radius: 60%;
+    margin-left: 2vw;
+    padding-left: 1vw;
+   
+  
+}
+.menu{
+    background-color: black;
+    height: 5vw;
+   
+}
+.padreList{
+    
+    display: flex;
+    float: right;
+    text-decoration: none;
+}
+.list{
+    list-style: none;
+}
+.list a{
+    color: white;
+   text-decoration: none;
+   padding: 4.5vw;
+
+}
+.list:hover a{
+    background-color: white;
+    color: black;
+}
