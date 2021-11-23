@@ -30,10 +30,21 @@ h3{
 .list a{
     color: white;
    text-decoration: none;
-   padding: 4.5vw;
+   padding: 5vw;
 
 }
 .list:hover a{
     background-color: white;
     color: black;
+}
+.parrafo{
+    text-shadow: 1px 1px 2px rgb(253, 249, 249);
+    margin-top: 180px;
+    font-size: 50px;
+    color: black;
+    background-color: blue;
+    margin-left: 30px;
+}
+.carrito{
+    margin-top: -20px;
 }
