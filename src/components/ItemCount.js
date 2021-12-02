@@ -22,8 +22,8 @@ const alerta=()=>{
 }
     return (
         <div>
+            <h1>{count}</h1>
            <button onClick={menos}>-</button>
-           <h1>{count}</h1>
            <button  onClick={mas}>+</button>
            <button onClick={alerta}>agregar al carrito</button>
            

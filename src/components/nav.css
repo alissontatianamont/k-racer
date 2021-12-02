@@ -48,3 +48,11 @@ h3{
 .carrito{
     margin-top: -20px;
 }
+.tarjetas{
+    background-color:black ;
+    color: white;
+    width: 30vw;
+}
+.imagen{
+    width: 25vw;
+}

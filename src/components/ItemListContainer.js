@@ -1,10 +1,24 @@
-import ItemCount from './ItemCount'
-import './nav.css'
+import { useEffect, useState } from "react";
+import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+import  {getProducts}  from "./products";
 
-function ItemListContainer ({greeting})  { 
-     return <>
-        <p className="parrafo">{greeting}</p>
-        <ItemCount stock={20} intial={1} onAdd={"GRACIAS POR SU COMPRA :D"}/>
-        </>
-    }
-export default ItemListContainer
+function ItemListContainer  ({greeting}) {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+    const list = getProducts();
+    list.then((list) => {
+    setProducts(list);});
+});
+    return (
+    <>
+    <h1>{greeting}</h1>
+    <ItemList product={products} />
+    <ItemCount stock={20} initial={1} onAdd={"Se añadio a la canasta"} />
+    </>
+);
+};
+
+export default ItemListContainer;
