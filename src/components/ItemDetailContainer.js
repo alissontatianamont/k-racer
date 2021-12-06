@@ -5,7 +5,7 @@ function Items2(){
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(products[1])
-        },4000)
+        },2000)
     })
 }
 function ItemDetailContainer() {
