@@ -16,7 +16,7 @@ function ItemListContainer  ({greeting}) {
     <>
     <h1>{greeting}</h1>
     <ItemList product={products} />
-    <ItemCount stock={20} initial={1} onAdd={"Se añadio a la canasta"} />
+    <ItemCount stock={20} initial={1}/>
     </>
 );
 };

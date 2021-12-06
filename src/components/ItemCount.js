@@ -1,10 +1,10 @@
 import React,{useState} from 'react'
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial}) => {
 
     const [count, setNumero]=useState(initial)
-    const[aviso]=useState(onAdd)
+   
     const mas = () =>{
         if(count<stock){
         setNumero(count +1)
@@ -18,7 +18,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
 }
 const alerta=()=>{
-    alert(aviso)
+    alert("gracias por su compra")
 }
     return (
         <div>
