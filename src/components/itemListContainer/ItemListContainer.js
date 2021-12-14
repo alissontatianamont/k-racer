@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-import  {getProducts}  from "./products";
+import  {getProducts}  from "../products";
+import {useParams} from 'react-router-dom'
 
 function ItemListContainer  ({greeting}) {
 
     const [products, setProducts] = useState([]);
+    const {categoryId}=useParams()
 
     useEffect(() => {
-    const list = getProducts();
-    list.then((list) => {
-    setProducts(list);});
+    getProducts(categoryId).then((item) => {
+    setProducts(item); 
 });
+    return(()=>{
+        setProducts([])
+    })
+},[categoryId]);
     return (
     <>
-    <h1>{greeting}</h1>
+    <h1 className="title">{greeting}</h1>
     <ItemList product={products} />
-    <ItemCount stock={20} initial={1}/>
     </>
 );
 };

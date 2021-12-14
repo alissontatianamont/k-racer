@@ -22,10 +22,10 @@ const alerta=()=>{
 }
     return (
         <div>
-            <h1>{count}</h1>
-           <button onClick={menos}>-</button>
-           <button  onClick={mas}>+</button>
-           <button onClick={alerta}>agregar al carrito</button>
+            <h1 className='count'>{count}</h1>
+           <button className='ButtonDetail' onClick={menos}>-</button>
+           <button className='ButtonDetail' onClick={mas}>+</button>
+           <button className='ButtonDetail' onClick={alerta}>agregar al carrito</button>
            
         </div>
     )

@@ -1,29 +1,26 @@
 //import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/navbar';
-import ItemListContainer from './components/ItemListContainer'
-import ItemDetailContainer from './components/ItemDetailContainer';
+import NavBar from './components/navBar/navbar';
+import ItemListContainer from './components/itemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
 
 function App() {
  return (
     <div className="App">
-      {/*<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
- </header>*/}
- <NavBar/>
- <ItemListContainer greeting="HOLA CODER"/>
- <ItemDetailContainer/>
+    <BrowserRouter>
+        <NavBar/>
+      <Switch>
+        <Route exact path='/'>
+        <ItemListContainer  greeting="-K-RACER TIENDA VIRTUAL-"/>
+        </Route>
+        <Route path='/category/:categoryId'>
+        <ItemListContainer/>
+        </Route>
+        <Route path='/detail/:paramId'>
+        <ItemDetailContainer/>
+        </Route>
+        </Switch>
+    </BrowserRouter>
     </div>
   );
 }
