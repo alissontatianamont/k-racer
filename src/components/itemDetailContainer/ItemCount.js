@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial,onAdd}) => {
 
     const [count, setNumero]=useState(initial)
    
@@ -17,15 +17,13 @@ const ItemCount = ({stock, initial}) => {
             setNumero(1)
         }
 }
-const alerta=()=>{
-    alert("gracias por su compra")
-}
+
     return (
         <div>
             <h1 className='count'>{count}</h1>
            <button className='ButtonDetail' onClick={menos}>-</button>
            <button className='ButtonDetail' onClick={mas}>+</button>
-           <button className='ButtonDetail' onClick={alerta}>agregar al carrito</button>
+           <button className='ButtonDetail'  onClick={()=>onAdd()}>agregar al carrito</button>
            
         </div>
     )
