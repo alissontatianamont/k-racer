@@ -1,18 +1,18 @@
 import {useState} from 'react'
 
 
-const ItemCount = ({stock, initial,onAdd}) => {
+const ItemCount = ({products,stock, initial,addItem}) => {
 
-    const [count, setNumero]=useState(initial)
+    const [qty, setNumero]=useState(initial)
    
     const mas = () =>{
-        if(count<stock){
-        setNumero(count +1)
+        if(qty<stock){
+        setNumero(qty +1)
         }
     }
     const menos= ()=>{
-        if(count>1){
-        setNumero(count - 1)
+        if(qty>1){
+        setNumero(qty - 1)
         }else{
             setNumero(1)
         }
@@ -20,10 +20,10 @@ const ItemCount = ({stock, initial,onAdd}) => {
 
     return (
         <div>
-            <h1 className='count'>{count}</h1>
+            <h1 className='count'>{qty}</h1>
            <button className='ButtonDetail' onClick={menos}>-</button>
            <button className='ButtonDetail' onClick={mas}>+</button>
-           <button className='ButtonDetail'  onClick={()=>onAdd()}>agregar al carrito</button>
+           <button className='ButtonDetail'  onClick={()=>addItem(products,qty)}>agregar al carrito</button>
            
         </div>
     )
