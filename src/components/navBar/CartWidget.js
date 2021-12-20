@@ -1,18 +1,18 @@
-import { useContext } from 'react'
-import { CartContext } from '../../context/useContext'
-import './nav.css'
-function CartWidget ()  { 
-    const {items}=useContext(CartContext)
-    let itemsInCart=0;
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 
-    items.map((products)=>{
-        itemsInCart=itemsInCart+products.qty
-    })
-    return( 
-    <>
-        <div>{itemsInCart}</div>
-       <button className="carrito"><img width="40px"  src="../imagenes/carrito.png" alt="carrito" /></button>
-       </>)
-   }
+import './nav.css';
+function CartWidget() {
+    const { values } = useContext(CartContext);
 
-   export default CartWidget
+    return (
+        <>
+            <p style={{color: "white"}}>{values.quantity}</p>
+            <button className="carrito">
+                <img width="40px" src="../imagenes/carrito.png" alt="carrito" />
+            </button>
+        </>
+    );
+}
+
+export default CartWidget;

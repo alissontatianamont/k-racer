@@ -1,15 +1,15 @@
 //import logo from './logo.svg';
-import Router from "./components/Router/Router";
-import {CartProvider} from './context/useContext'
+import Router from './components/Router/Router';
+import { CartContext } from './context/CartContext';
 
 function App() {
- return (
-    <>
-    <CartProvider>
-     <Router/>
-     </CartProvider>
-    </>
-  );
+    return (
+        <>
+            <CartContext>
+                <Router />
+            </CartContext>
+        </>
+    );
 }
 
 export default App;
