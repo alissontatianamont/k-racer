@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from '../navBar/navbar';
 import ItemListContainer from '../itemListContainer/ItemListContainer';
 import ItemDetailContainer from '../itemDetailContainer/ItemDetailContainer';
-import Cart from '../../views/Cart';
+import CartViewContainer from '../../Carrito/CartViewContainer'
 
 const Router = () => {
     return (
@@ -20,7 +20,7 @@ const Router = () => {
                         <ItemDetailContainer />
                     </Route>
                     <Route path="/cart">
-                        <Cart />
+                        <CartViewContainer />
                     </Route>
                 </Switch>
             </BrowserRouter>

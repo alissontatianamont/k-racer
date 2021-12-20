@@ -9,7 +9,7 @@ const Cart = ({items}) => {
             {
                 
                     <div >
-                        {items.map(item=><ItemCart key={item.product.id} item={item.product} />)}
+                        {items.map(item=><ItemCart key={item.product.id} item={item.product} quantity={item.quantity}/>)}
                     </div>
                 
                 }

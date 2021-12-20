@@ -15,8 +15,10 @@ export const CartContext = ({ children }) => {
     const isInCart = (itemId) => {
         return items.find((item) => item.product.id === itemId);
     };
-    const removeItem = (id) => {
+
+    const removeItem = (id,itemQuantity) => {
         setItems(items.filter((item) => item.product.id !== id));
+        setQuantity(quantity - itemQuantity);
     };
     const clearItems = () => {
         setItems([]);
@@ -24,9 +26,14 @@ export const CartContext = ({ children }) => {
     const addQuantity = (itemQuantity) => {
         setQuantity(quantity + itemQuantity);
     }
+       const addQuantityById = (id, itemQuantity) => {
+        const item = items.find((item) => item.product.id === id);
+        item.count = item.qty + itemQuantity;
+        addQuantity(itemQuantity);
+    };
 
     return (
-        <Context.Provider value={{ values: { items, quantity }, addItem, addQuantity, removeItem, clearItems, isInCart }}>
+        <Context.Provider value={{ values: { items, quantity }, addItem, addQuantity, removeItem, clearItems,addQuantityById, isInCart }}>
             {children}
         </Context.Provider>
     );

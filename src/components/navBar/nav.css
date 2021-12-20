@@ -17,6 +17,10 @@ h3{
    
   
 }
+.Carrito{
+    color: white;
+    display: flex;
+}
 
 .imagen{
     width: 30vw;
