@@ -9,6 +9,8 @@ const CartViewContainer = () => {
         <div>
             <h1 style={{color: 'white'}}>Hola</h1>
             <Cart items={values.items} />
+            <p style={{ color: 'white' }}>{values.quantity}</p>
+            
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import CartContext from '../context/CartContext';
 
 const ItemCart = ({ item, quantity }) => {
-    const { removeItem,values } = useContext(CartContext);
+    const { removeItem} = useContext(CartContext);
 
     const removeItems = () =>{
         removeItem(item.id, quantity);
@@ -13,7 +13,7 @@ const ItemCart = ({ item, quantity }) => {
             <div className="ItemCar">
                 <img src={item.img} alt="Imagen" />
                 <h1> {item.name} </h1>
-                <p style={{ color: 'white' }}>{values.quantity}</p>
+                <p style={{ color: 'white' }}>{quantity}</p>
                 <button onClick={removeItems}>X</button>
             </div>
         </div>

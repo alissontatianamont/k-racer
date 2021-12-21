@@ -8,7 +8,7 @@ import CartContext from '../../context/CartContext';
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
-    const { addItem, addQuantity, isInCart,addQuantityById } = useContext(CartContext);
+    const { addItem, addQuantity, isInCart } = useContext(CartContext);
     const [add, setAdd] = useState(false);
     const [purchase, setPurchase] = useState(false);
     const { paramId } = useParams();
@@ -24,17 +24,10 @@ function ItemDetailContainer() {
                 window.alert(`¡Agregada la cantidad de ${quantity} de ${product.name} a tu carrito!`);
                 addQuantity(quantity);
                 setPurchase(true);
+            }else{
+               console.log('no entró');
             }
-         else {
-            if (productoRecibido.quantity + quantity <= product.stock) {//quiero ejecutar esto
-                window.alert(`¡Agregada la cantidad de ${quantity} de ${product.name} a tu carrito!`);
-                addQuantityById(product.id, quantity);
-                setPurchase(true);
-            } 
-            else{
-                alert("no permitido")//se salta directo aqui
-            }
-            }
+    
         } else {
             alert('No ingresaste una cantidad valida');
         }
