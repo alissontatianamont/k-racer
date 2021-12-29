@@ -7,6 +7,7 @@ const ItemCart = ({ item, quantity }) => {
     const removeItems = () =>{
         removeItem(item.id, quantity);
     }
+  
 
     return (
         <div>
@@ -15,6 +16,7 @@ const ItemCart = ({ item, quantity }) => {
                 <h1> {item.name} </h1>
                 <p style={{ color: 'white' }}>{quantity}</p>
                 <button onClick={removeItems}>X</button>
+                
             </div>
         </div>
     );

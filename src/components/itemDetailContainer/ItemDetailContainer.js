@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-
 import ItemDetail from './ItemDetail';
 import ItemCount from './ItemCount';
 import { getProductById } from '../products';

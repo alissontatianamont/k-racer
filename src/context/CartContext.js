@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const Context = React.createContext();
 
 export const CartContext = ({ children }) => {
@@ -22,6 +23,7 @@ export const CartContext = ({ children }) => {
     };
     const clearItems = () => {
         setItems([]);
+        setQuantity(0)
     };
     const addQuantity = (itemQuantity) => {
         setQuantity(quantity + itemQuantity);
