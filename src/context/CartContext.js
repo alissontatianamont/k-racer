@@ -23,7 +23,7 @@ export const CartContext = ({ children }) => {
     };
     const clearItems = () => {
         setItems([]);
-        setQuantity(0)
+        setQuantity()
     };
     const addQuantity = (itemQuantity) => {
         setQuantity(quantity + itemQuantity);

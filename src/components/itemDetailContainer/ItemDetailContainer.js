@@ -24,13 +24,14 @@ function ItemDetailContainer() {
                 addQuantity(quantity);
                 setPurchase(true);
             }else{
-               console.log('no entró');
+               alert('no entró');
             }
     
         } else {
             alert('No ingresaste una cantidad valida');
         }
     };
+    
 
     useEffect(() => {
         getProductById(paramId).then((item) => {

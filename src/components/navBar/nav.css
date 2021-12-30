@@ -153,6 +153,11 @@ h3{
     text-decoration: none;
     margin-top: 4vw;
 }
+.ButtonDetail2{
+    background-color: black;
+    color: white;
+    margin-left: 40vw;
+}
 .ButtonDetail:hover{
     background-color: white;
     color: black;
