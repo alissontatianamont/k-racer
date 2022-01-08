@@ -10,17 +10,7 @@ const products =[
 ]
 
 
-const categories = [
-    {id:'cascos',description: 'cascos'},
-    {id:'guantes',description: 'guantes'},
-]
-export const getCategories = () => {    
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(categories)
-        }, 1000)        
-    })
-}
+
 
 export const getProducts = (category) =>{
     return new Promise((resolve) => {

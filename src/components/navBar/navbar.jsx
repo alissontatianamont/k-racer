@@ -3,18 +3,22 @@ import './nav.css';
 import './CartWidget';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
-import { getCategories } from '../products';
 import { useEffect, useState } from 'react';
+import { db } from '../../servces/firebase/firebase';
+import {collection,getDocs} from 'firebase/firestore'
 
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        getCategories().then((categories) => {
-            setCategories(categories);
-        });
+        getDocs(collection(db,'categories')).then((querySnapshot)=>{
+            const categories=querySnapshot.docs.map(doc=>{
+                return{id:doc.id, ...doc.data()}
+            })
+            setCategories(categories)
+        })
+        
     }, []);
-    // console.log(categories);
     return (
         <div className="menu">
             <h3>

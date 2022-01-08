@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useContext } from 'react';
 import ItemDetail from './ItemDetail';
 import ItemCount from './ItemCount';
-import { getProductById } from '../products';
 import { useParams, Link } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
+import {getDoc,doc} from 'firebase/firestore'
+import{db} from '../../servces/firebase/firebase'
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
     const { addItem, addQuantity, isInCart } = useContext(CartContext);
     const [add, setAdd] = useState(false);
-    const [purchase, setPurchase] = useState(false);
+    const [ purchase, setPurchase] = useState(false);
     const { paramId } = useParams();
 
     const onAdd = (quantity) => {
@@ -34,10 +35,13 @@ function ItemDetailContainer() {
     
 
     useEffect(() => {
-        getProductById(paramId).then((item) => {
-            setProduct(item);
-            setPurchase(true);
-        });
+        getDoc(doc(db,'items',paramId)).then((querySnapshot)=>{
+            console.log(querySnapshot);
+            const product={  id:querySnapshot.id,...querySnapshot.data()}
+            setProduct(product)
+        }).catch((error)=>{
+            console.log('error base de datos',error );
+        })
         return () => {
             setProduct();
         };
@@ -45,7 +49,7 @@ function ItemDetailContainer() {
 
     return (
         <div>
-            {purchase ? (
+            
                 <div>
                     <h1 className="title">-DETALLES-</h1>
                     <ItemDetail product={product} />
@@ -57,9 +61,7 @@ function ItemDetailContainer() {
                         </Link>
                     )}
                 </div>
-            ) : (
-                <div className="title">cargando...</div>
-            )}
+           
         </div>
     );
 }
