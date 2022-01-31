@@ -1,5 +1,6 @@
 .menu{
     background-color: #000000;
+    padding-bottom: 4vw;
 }
 .logo{
     color: white;
@@ -23,11 +24,16 @@
     
 }
 .carrito{
-    color: white;
-    display: flex;
-    margin-left: 94vw;
-    font-size: 2vw;
-    margin-top: 0;
+    margin-bottom: 6px;
+    margin-left: 92vw;
+    margin-top: -3vh;
+    position: absolute;
+
+}
+.carrito button {
+    cursor: pointer;
+    width: 5vw;
+    border-radius: 25%;
 }
 .count{
     color: white;
